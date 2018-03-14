@@ -1,0 +1,16 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+
+  <form method ="post" action="{% url 'users:register' %}">
+  {% csrf_token %}
+   {{form.as_p}}
+  
+  <font color="red">TIPS: Password must contain at least one upper case letter,
+  one lower case letter, and one number. </font></br>
+  
+  <button name="submit">register</button>
+  <input type="hidden" name="next" value="{% url 'pizzas:index'}"/>
+  </form>
+  
+{% endblock content %}

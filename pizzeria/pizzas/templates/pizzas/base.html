@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'pizzas/style.css' %}"/>
+
+</head>
+<p>
+    <a href="{% url 'pizzas:index' %}"> Pizzas APP </a>   &nbsp; &nbsp; &nbsp;
+    {% if user.is_authenticated %}
+       Hello, {{user.username}}. &nbsp;
+       <a href="{% url 'users:logout'%}">log out</a> &nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; &nbsp;
+    {% else %}
+       <a href="{% url 'users:register'%}">register</a> -
+       <a href="{% url 'users:login'%}">log in</a> &nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; &nbsp;
+    {% endif%}
+       <a href="{% url 'pizzas:order' %}">Click here to place order</a>&nbsp; &nbsp;&nbsp; &nbsp;
+    - &nbsp; &nbsp;&nbsp; &nbsp;<a href="{% url 'pizzas:contact' %}"> Contact us </a> </br>
+    </br>
+    
+    </br>
+    - <a href="{% url 'pizzas:pizzas' %}"> Pizzas </a> </br>
+    - <a href="{% url 'pizzas:topping' %}"> Topping </a> </br>
+    
+
+</p>
+<body>
+
+<h1>Yuan's Pizzeria</h1>
+
+
+
+
+
+</body>
+
+</html>
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+   
+   
+   
+
+{% block content %}{% endblock content %}
